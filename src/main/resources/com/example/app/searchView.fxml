@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="540.0" maxWidth="770.0" minHeight="540.0" minWidth="770.0" prefHeight="540.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.SearchWordController">
+   <children>
+      <GridPane prefHeight="540.0" prefWidth="770.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="460.0" minWidth="460.0" prefWidth="460.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="400.0" minHeight="400.0" prefHeight="400.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+              <columns>
+                <TableColumn fx:id="wordColumn" prefWidth="359.0" />
+              </columns>
+            </TableView>
+            <GridPane prefHeight="52.0" prefWidth="460.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="280.0" minWidth="280.0" prefWidth="280.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="45.0" minWidth="45.0" prefWidth="45.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="45.0" minWidth="45.0" prefWidth="45.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="45.0" minWidth="45.0" prefWidth="45.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="45.0" minWidth="45.0" prefWidth="45.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#speak" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="1">
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/speakerWord.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#fixWord" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/editWord.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#deleteWord" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/deleteWord.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <TextField fx:id="word_pronounceTextField" maxHeight="40.0" maxWidth="275.0" minHeight="40.0" minWidth="275.0" prefHeight="40.0" prefWidth="227.0" />
+                  <Button maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#save" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/save.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </GridPane>
+            <GridPane GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="240.0" prefWidth="240.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="searchTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="227.0" />
+                  <Button fx:id="searchButton" maxHeight="40.0" maxWidth="50.0" minHeight="40.0" minWidth="50.0" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="50.0" GridPane.columnIndex="2">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/searchWord.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+            </GridPane>
+            <TextArea fx:id="word_explainTextArea" prefHeight="400.0" prefWidth="460.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" maxWidth="300.0" minWidth="30.0" prefHeight="59.0" prefWidth="300.0" styleClass="headLabel" text="S e a r c h" />
+            <Label alignment="CENTER" maxWidth="460.0" minWidth="460.0" prefHeight="60.0" prefWidth="460.0" styleClass="headLabel" text="D e f i n i t i o n" GridPane.columnIndex="2" />
+            <ImageView fitHeight="47.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" GridPane.columnIndex="2">
+               <image>
+                  <Image url="@images/list.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" translateX="10.0">
+               <image>
+                  <Image url="@images/searchBook.png" />
+               </image>
+            </ImageView>
+            <Button maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#showAllInfoWord" prefHeight="22.0" prefWidth="22.0" textFill="#f2dcdc" translateX="435.0" translateY="170.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/grammar.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

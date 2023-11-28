@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="540.0" maxWidth="770.0" minHeight="540.0" minWidth="770.0" prefHeight="540.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.AddWordController">
+   <children>
+      <GridPane maxHeight="540.0" maxWidth="770.0" minHeight="540.0" minWidth="770.0" prefHeight="540.0" prefWidth="770.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="150.0" minHeight="93.0" prefHeight="104.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="147.0" minHeight="50.0" prefHeight="61.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="128.0" minHeight="50.0" prefHeight="58.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="120.0" minHeight="45.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="272.0" minHeight="200.0" prefHeight="257.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label maxHeight="50.0" maxWidth="160.0" minHeight="50.0" minWidth="160.0" prefHeight="50.0" prefWidth="160.0" text="Tiếng Anh" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/great_britain.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+            <Label maxHeight="50.0" maxWidth="160.0" minHeight="50.0" minWidth="160.0" prefHeight="50.0" prefWidth="160.0" text="Tiếng Việt" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/vietnam.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+            <TextField fx:id="addWord_target" maxHeight="50.0" maxWidth="400.0" minHeight="50.0" minWidth="400.0" prefHeight="50.0" prefWidth="400.0" promptText="Mời bạn nhập từ tiếng anh" GridPane.rowIndex="2" />
+            <TextArea fx:id="addWord_explain" maxHeight="263.0" maxWidth="400.0" minHeight="200.0" minWidth="400.0" prefHeight="263.0" prefWidth="400.0" promptText="Mời bạn nhập nghĩa tiếng việt" GridPane.rowIndex="4" />
+            <Label alignment="BOTTOM_RIGHT" maxHeight="50.0" maxWidth="170.0" minHeight="50.0" minWidth="170.0" prefHeight="50.0" prefWidth="170.0" text="phần này không được để trống" translateX="200.0" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label alignment="BOTTOM_RIGHT" maxHeight="50.0" maxWidth="170.0" minHeight="50.0" minWidth="170.0" prefHeight="50.0" prefWidth="170.0" text="phần này không được để trống" translateX="200.0" GridPane.rowIndex="3">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <TextField fx:id="addWord_pronounce" maxHeight="50.0" maxWidth="320.0" minHeight="50.0" minWidth="320.0" prefHeight="50.0" prefWidth="320.0" promptText="Mời bạn nhập phiên âm tiếng anh" translateX="450.0" GridPane.rowIndex="2" />
+            <Button maxHeight="50.0" maxWidth="158.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#addWord" prefHeight="50.0" prefWidth="150.0" text="Save" translateX="580.0" translateY="82.0" GridPane.rowIndex="4">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/save.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Label alignment="CENTER" maxWidth="770.0" minWidth="770.0" prefHeight="63.0" prefWidth="770.0" styleClass="headLabel" text="  T h ê m t ừ v ự n g">
+               <graphic>
+                  <ImageView fitHeight="56.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/addWord.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

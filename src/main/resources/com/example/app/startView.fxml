@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="scene1AnchorPane" maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.StartController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/dictionary.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="startButton" alignment="CENTER" contentDisplay="CENTER" layoutX="390.0" layoutY="368.0" maxWidth="120.0" minWidth="120.0" mnemonicParsing="false" onAction="#start" prefWidth="120.0" styleClass="S_Button" text="START" textAlignment="CENTER">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="inforButton" alignment="CENTER" contentDisplay="CENTER" layoutX="390.0" layoutY="462.0" maxWidth="120.0" minWidth="120.0" mnemonicParsing="false" onAction="#getInformation" prefWidth="120.0" styleClass="S_Button" text="INFOR">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane fx:id="scene2AnchorPane" maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.RunController">
+   <children>
+      <BorderPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0">
+         <top>
+            <AnchorPane maxHeight="30.0" maxWidth="900.0" minHeight="30.0" minWidth="900.0" prefHeight="30.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+         </top>
+         <right>
+            <AnchorPane maxHeight="540.0" maxWidth="30.0" minHeight="540.0" minWidth="30.0" prefHeight="540.0" prefWidth="30.0" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <AnchorPane maxHeight="30.0" maxWidth="900.0" minHeight="30.0" minWidth="900.0" prefHeight="30.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+         </bottom>
+         <left>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Button fx:id="searchButton" maxHeight="50.0" maxWidth="65.0" minHeight="50.0" minWidth="65.0" mnemonicParsing="false" onAction="#goSearchWord" prefHeight="50.0" prefWidth="65.0" styleClass="runButton">
+                           <VBox.margin>
+                              <Insets bottom="45.0" />
+                           </VBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/search.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="addButton" maxHeight="50.0" maxWidth="65.0" minHeight="50.0" minWidth="65.0" mnemonicParsing="false" onAction="#goAddWord" prefHeight="50.0" prefWidth="65.0" styleClass="runButton">
+                           <VBox.margin>
+                              <Insets bottom="45.0" />
+                           </VBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="translateButton" maxHeight="50.0" maxWidth="65.0" minHeight="50.0" minWidth="65.0" mnemonicParsing="false" onAction="#goTranslate" prefHeight="50.0" prefWidth="65.0" styleClass="runButton">
+                           <VBox.margin>
+                              <Insets bottom="45.0" />
+                           </VBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/google_translate_1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="gameButton" maxHeight="50.0" maxWidth="65.0" minHeight="50.0" minWidth="65.0" mnemonicParsing="false" onAction="#goGame" prefHeight="50.0" prefWidth="65.0" styleClass="runButton">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/game.png" />
+                                 </image></ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+         </left>
+         <center>
+            <AnchorPane fx:id="centerAnchorPane" maxHeight="540.0" maxWidth="770.0" minHeight="540.0" minWidth="770.0" prefHeight="540.0" prefWidth="770.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

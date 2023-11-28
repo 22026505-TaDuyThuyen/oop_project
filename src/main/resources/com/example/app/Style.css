@@ -1,0 +1,63 @@
+.button{
+    -fx-background-color: #cecece;
+    -fx-background-radius:6;
+}
+
+.button:hover{
+    -fx-background-color: #919090;
+}
+.S_Button {
+    -fx-font-size: 25px;
+    -fx-background-color: linear-gradient(to right bottom,#eeff00,#f56a6a);
+    -fx-background-radius:20;
+    -fx-background-insets: 1;
+    -fx-padding: 5 5 5 5;
+    -fx-font-weight: bold;
+    -fx-text-fill: blue;
+    -fx-effect: dropshadow(three-pass-box, rgb(0,0,0,0.4),0,0,5,5);
+}
+
+.S_Button:hover {
+    -fx-background-color: linear-gradient(to right bottom,#eeff00b3,#f56a6ab3);
+}
+
+.S_Button:pressed {
+    -fx-font-size:23;
+}
+
+.runButton {
+    -fx-background-color: none;
+}
+.runButton:hover {
+    -fx-background-color: #2cb1d0;
+}
+
+.root {
+    -fx-background-color: #21c7ee;
+}
+
+#searchPane{
+    -fx-background-color: white;
+}
+
+#wordInfoPane{
+    -fx-background-color: white;
+}
+
+.S_Label {
+    -fx-font-size: 30px;
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+    -fx-alignment:  center;
+}
+
+.headLabel {
+    -fx-font-size: 30px;
+    -fx-text-fill: black;
+    -fx-font-weight: bold italic;
+    -fx-alignment:  center;
+    -fx-background-color: linear-gradient(to right bottom,rgb(78,203,208),rgb(132,235,243));
+    -fx-background-radius:8;
+}
+
+

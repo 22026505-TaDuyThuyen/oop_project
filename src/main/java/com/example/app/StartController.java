@@ -54,10 +54,7 @@ public class StartController implements Initializable {
                 "Tạ Duy Thuyên_22026505\n" +
                 "Võ Quang Sáng_22026526\n" +
                 "Trương Đức Quang_22026536";
-        Alert getInfor = new Alert(Alert.AlertType.INFORMATION);
-        getInfor.setHeaderText("Information");
-        getInfor.setContentText(infor);
-        getInfor.show();
+        new ShowInformationAlert("Information",infor);
     }
 
     // bắt đầu chương trình

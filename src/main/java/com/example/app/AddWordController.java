@@ -73,10 +73,8 @@ public class AddWordController {
                     Statement statement = connection.createStatement();
                     statement.execute(AddWordQuery);
                     dictionary.addWordSort(new Word(AddWord_target,AddWord_explain,AddWord_pronounce));
-                    Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-                    alert1.setHeaderText("SUCCESSFUL");
-                    alert1.setContentText("Thêm từ vựng thành công!");
-                    alert1.show();
+
+                    new ShowInformationAlert("SUCCESSFUL","Thêm từ vựng thành công!");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

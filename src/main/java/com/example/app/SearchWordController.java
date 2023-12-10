@@ -115,10 +115,8 @@ public class SearchWordController implements Initializable {
             }catch (Exception e) {
                 e.printStackTrace();
             }
-            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-            alert1.setHeaderText("SUCCESSFUL");
-            alert1.setContentText("Bạn đã xóa từ vựng thành công!");
-            alert1.show();
+
+            new ShowInformationAlert("SUCCESSFUL","Bạn đã xóa từ vựng thành công!");
         }
     }
 
@@ -162,10 +160,7 @@ public class SearchWordController implements Initializable {
                 }catch (Exception e) {
                     e.printStackTrace();
                 }
-                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-                alert1.setHeaderText("SUCCESSFUL");
-                alert1.setContentText("Bạn đã sửa từ vựng thành công!");
-                alert1.show();
+                new ShowInformationAlert("SUCCESFUL","Bạn đã sửa từ vựng thành công!");
             }
         }
     }

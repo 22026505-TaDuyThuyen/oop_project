@@ -69,10 +69,7 @@ public class TranslateController implements Initializable {
                 translateToTextArea.setText(googleTranslate("vi", "en", translateFromTextArea.getText()));
             }
         } catch (Exception e){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Error");
-            alert.setContentText("Lỗi kết nối mạng !");
-            alert.show();
+            new ShowInformationAlert("ERROR","Lỗi kết nối mạng !");
         }
     }
 }

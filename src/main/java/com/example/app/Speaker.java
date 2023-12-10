@@ -57,10 +57,7 @@ public class Speaker {
         thread.start() ;
         Thread.currentThread().sleep(50);
         if(haveInternet == false){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Error");
-            alert.setContentText("Lỗi kết nối mạng !");
-            alert.show();
+            new ShowInformationAlert("ERROR","Lỗi kết nối mạng !");
         }
     }
 

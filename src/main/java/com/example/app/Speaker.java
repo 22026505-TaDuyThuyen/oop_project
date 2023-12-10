@@ -3,6 +3,11 @@ package com.example.app;
 import javax.sound.sampled.*;
 import java.io.ByteArrayInputStream;
 import java.io.FileOutputStream;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 import com.voicerss.tts.AudioCodec;
 import com.voicerss.tts.AudioFormat;
 import com.voicerss.tts.Languages;
@@ -18,9 +23,12 @@ public class Speaker {
     public static String language = "en-gb";
     public static String Name = "Linda";
 
+    private static volatile boolean haveInternet = true;
+
     public static void speakWord(String word) throws Exception {
-        Thread thread = new Thread(() -> {
+        Runnable runnable = () -> {
             try {
+                haveInternet = true;
                 VoiceProvider tts = new VoiceProvider(API_KEY);
 
                 VoiceParameters params = new VoiceParameters(word, Languages.English_UnitedStates);
@@ -42,15 +50,18 @@ public class Speaker {
                 fos.flush();
                 fos.close();
             } catch (Exception e) {
-                e.printStackTrace();
-                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-                alert1.setHeaderText("Error");
-                alert1.setContentText("Lỗi kết nối mạng !");
-                alert1.show();
+                 haveInternet = false;
             }
-        });
-
-        thread.start();
+        };
+        Thread thread = new Thread(runnable);
+        thread.start() ;
+        Thread.currentThread().sleep(50);
+        if(haveInternet == false){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Error");
+            alert.setContentText("Lỗi kết nối mạng !");
+            alert.show();
+        }
     }
 
     private static void playAudio(byte[] audioData) throws Exception {

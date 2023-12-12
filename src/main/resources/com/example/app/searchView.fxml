@@ -97,7 +97,7 @@
                      </graphic></Button>
                </children>
             </GridPane>
-            <TextArea fx:id="word_explainTextArea" prefHeight="400.0" prefWidth="460.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextArea fx:id="word_explainTextArea" maxHeight="400.0" maxWidth="460.0" minHeight="400.0" minWidth="460.0" prefHeight="400.0" prefWidth="460.0" styleClass="textArea" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Label alignment="CENTER" maxWidth="300.0" minWidth="30.0" prefHeight="59.0" prefWidth="300.0" styleClass="headLabel" text="S e a r c h" />
             <Label alignment="CENTER" maxWidth="460.0" minWidth="460.0" prefHeight="60.0" prefWidth="460.0" styleClass="headLabel" text="D e f i n i t i o n" GridPane.columnIndex="2" />
             <ImageView fitHeight="47.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" GridPane.columnIndex="2">

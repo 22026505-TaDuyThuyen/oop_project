@@ -42,11 +42,10 @@ public class SearchWordController implements Initializable {
     public void initialize(URL url, ResourceBundle resource) {
             try {
                 wordColumn.setCellValueFactory(new PropertyValueFactory<>("word_target"));
-
+                word_pronounceTextField.setEditable(false);
                 // khi tra từ
                 searchTextField.textProperty().addListener((observableValue, oldValue, newValue) -> {
                     word_explainTextArea.setEditable(false);
-                    word_pronounceTextField.setEditable(false);
                     word_explainTextArea.setText("");
                     word_pronounceTextField.setText("");
                     wordSearched = dictionary.searcher2(searchTextField.getText());
@@ -118,6 +117,9 @@ public class SearchWordController implements Initializable {
 
             new ShowInformationAlert("SUCCESSFUL","Bạn đã xóa từ vựng thành công!");
         }
+        word_explainTextArea.setEditable(false);
+        word_explainTextArea.setText("");
+        word_pronounceTextField.setText("");
     }
 
     // lưu lại phần đã sửa
@@ -127,10 +129,7 @@ public class SearchWordController implements Initializable {
 
         }
         else if(word_explainTextArea.getText()==""){
-            Alert error = new Alert(Alert.AlertType.INFORMATION);
-            error.setHeaderText("error");
-            error.setContentText("Sửa không hợp lệ");
-            error.show();
+            new ShowInformationAlert("ERROR","Sửa không hợp lệ !");
         }
         else if(!tableView.getSelectionModel().getSelectedItem().getWord_explain().equals(word_explainTextArea.getText())||
                 !tableView.getSelectionModel().getSelectedItem().getWord_pronounce().equals(word_pronounceTextField.getText())){
@@ -143,13 +142,25 @@ public class SearchWordController implements Initializable {
             Optional<ButtonType> result = alert.showAndWait();
             if(result.get().getButtonData() == ButtonBar.ButtonData.YES){
                 try {
-                    String WordFixQuery = String.format("update av set description = '%s' where word='%s'",
+                    Word word = tableView.getSelectionModel().getSelectedItem();
+                    String htmlFixFrom = dictionary.lookup(word.getWord_target()).getWord_explain();
+                    for(int i=0;i<htmlFixFrom.length();i++){
+                        if(htmlFixFrom.charAt(i)==':'){
+                            htmlFixFrom = htmlFixFrom.substring(i+2);
+                        }
+                    }
+                    String htmlFixTo = word_explainTextArea.getText();
+                    for(int i=0;i<htmlFixTo.length();i++){
+                        if(htmlFixTo.charAt(i)==':'){
+                            htmlFixTo = htmlFixTo.substring(i+2);
+                        }
+                    }
+                    String WordFixQuery = String.format("update av set description = '%s',html = replace(html,'%s','%s') where word='%s'",
                             word_explainTextArea.getText(),
+                            htmlFixFrom,htmlFixTo,
                             tableView.getSelectionModel().getSelectedItem().getWord_target());
                     Statement statement = connection.createStatement();
                     statement.execute(WordFixQuery);
-
-                    Word word = tableView.getSelectionModel().getSelectedItem();
 
                     dictionary.lookup(word.getWord_target()).setWord_explain(word_explainTextArea.getText());
                     dictionary.lookup(word.getWord_target()).setWord_pronounce(word_pronounceTextField.getText());
@@ -163,18 +174,17 @@ public class SearchWordController implements Initializable {
                 new ShowInformationAlert("SUCCESFUL","Bạn đã sửa từ vựng thành công!");
             }
         }
+        word_explainTextArea.setEditable(false);
     }
 
     // tìm kiếm
     @FXML
     void search(ActionEvent event) throws IOException {
-        Word word = dictionary.lookup(searchTextField.getText());
-        if(word==null){
-            word_explainTextArea.setText("No result");
+        if(tableView.getSelectionModel().getSelectedItem()==null){
+            tableView.getSelectionModel().selectFirst();
         }
         else {
-            word_explainTextArea.setText(word.getWord_explain());
-            word_pronounceTextField.setText(word.getWord_pronounce());
+            tableView.getSelectionModel().selectNext();
         }
     }
 

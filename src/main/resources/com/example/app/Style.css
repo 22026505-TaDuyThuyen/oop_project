@@ -44,13 +44,6 @@
     -fx-background-color: white;
 }
 
-.S_Label {
-    -fx-font-size: 30px;
-    -fx-text-fill: red;
-    -fx-font-weight: bold;
-    -fx-alignment:  center;
-}
-
 .headLabel {
     -fx-font-size: 30px;
     -fx-text-fill: black;
@@ -58,6 +51,12 @@
     -fx-alignment:  center;
     -fx-background-color: linear-gradient(to right bottom,rgb(78,203,208),rgb(132,235,243));
     -fx-background-radius:8;
+}
+
+.textArea {
+    -fx-font-size: 15px;
+    -fx-text-fill: black;
+    -fx-font-weight: bold italic;
 }
 
 
